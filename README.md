@@ -43,7 +43,7 @@
 ### **Contributors** 🤝  
 - **Piyush Sethy:** Mechanical Engineer, UMD  
 - **Isaac S Lee:** Computer Science, UMD  
-- **Jiaxuang Suhe:** Mechanical Engineer, UMD  
+- **Jixiang Suhe:** Mechanical Engineer, UMD  
 
 ---
 
