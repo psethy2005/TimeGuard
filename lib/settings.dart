@@ -1,0 +1,1 @@
+// This file will be responsible for settings tab on the app. Informations such as privacy, QnA, and so on will be listed.
