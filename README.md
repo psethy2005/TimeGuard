@@ -1,16 +1,54 @@
-# flutter_test1
+# 📱 **TimeGuard**  
+**Helping College Students Manage Time Effectively**  
 
-A new Flutter project.
+### **About the Project** 🌟  
+**TimeGuard** is an iPhone app designed to help college students manage their time better and reduce procrastination by controlling screen time. Users can set daily screen time limits, track their progress, and gain insights into their habits through visually appealing graphs and charts.  
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+### **Key Features** 🚀  
+#### 📊 **Graphs and Charts**  
+- **Daily Screen Time Pie Chart:** Visual breakdown of time spent across different apps.  
+- **Weekly Trend Line Graph:** Tracks daily screen time over the week.  
+- **Goal Progress Bar:** Displays progress towards weekly screen time goals.  
 
-A few resources to get you started if this is your first Flutter project:
+#### 📅 **Calendar Section**  
+- **Goal Achievement Calendar:** Monthly view to track goal achievement streaks.  
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+#### ⚙️ **Settings**  
+- **Useful Info and Advice:**  
+  - Tips to reduce screen time.  
+  - Short insights on screen time habits.  
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+#### 🎉 **Fun and Engaging Add-ons**  
+- **Streak Counter:** Tracks consecutive days you meet your screen time goal.  
+- **Motivational Quotes:** Daily quotes about productivity and focus.  
+
+---
+
+### **How It Works** 🛠️  
+- Users set a daily screen time limit.  
+- Once the limit is exceeded, selected apps are temporarily blocked.  
+- Visual insights and motivational tools help users stay on track.  
+
+---
+
+### **Technologies Used** 💻  
+- **Frontend:** Flutter  
+- **Backend:** Dart, Firebase (for data storage and authentication)  
+- **Graphs & Charts:** Recharts library for Flutter  
+
+---
+
+### **Contributors** 🤝  
+- **Piyush Sethy:** Mechanical Engineer, UMD  
+- **Isaac Lee:** Computer Science, UMD  
+- **Jiaxuang Suhe:** Mechanical Engineer, UMD  
+
+---
+
+### **Getting Started** 🚀  
+1. Clone the repository:  
+   ```bash
+   git clone https://github.com/psethy2005/TimeGuard.git
+
