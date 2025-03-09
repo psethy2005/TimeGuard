@@ -2,7 +2,7 @@
 **Helping College Students Manage Time Effectively**  
 
 ### **About the Project** 🌟  
-**TimeGuard** is an iPhone app designed to help college students manage their time better and reduce procrastination by controlling screen time. Users can set daily screen time limits, track their progress, and gain insights into their habits through visually appealing graphs and charts.  
+**TimeGuard** is a Phone app designed to help college students manage their time better and reduce procrastination by controlling screen time. Users can set daily screen time limits, track their progress, and gain insights into their habits through visually appealing graphs and charts.  
 
 ---
 
