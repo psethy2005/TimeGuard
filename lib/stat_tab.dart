@@ -1,18 +1,19 @@
-// This file will be responsible for settings tab on the app. Informations such as privacy, QnA, and so on will be listed.
+//For the statistics page
 
 import 'package:flutter/material.dart';
 
-class SettingsContent extends StatelessWidget {
-  const SettingsContent({super.key});
+
+class StatContent extends StatelessWidget {
+  const StatContent({super.key});
 
   @override
- Widget build(BuildContext context) {
+  Widget build(BuildContext context) {
       return 
       MaterialApp(
-        title: 'Settings',
+        title: 'Statistics',
         home: Scaffold(
           appBar: AppBar(
-            title: const Text('Settings'),
+            title: const Text('Statistics'),
             centerTitle: true,
             backgroundColor: Colors.blue,
           ),
@@ -22,6 +23,6 @@ class SettingsContent extends StatelessWidget {
           ),
           backgroundColor: Colors.lightBlue[100],
         )
-      );     
- } 
+      );
+  }
 }
