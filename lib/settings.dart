@@ -18,7 +18,7 @@ class SettingsContent extends StatelessWidget {
           ),
           body: Container(
             margin: const EdgeInsets.all(100),
-            child: const Text('stop procrastinating and insert a graph here')
+            child: const Text('stop procrastinating and insert a settings here')
           ),
           backgroundColor: Colors.lightBlue[100],
         )
