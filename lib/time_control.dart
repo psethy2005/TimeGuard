@@ -1,3 +1,4 @@
+//This will be the time settings
 import 'package:flutter/material.dart';
 
 class TimeControl extends StatefulWidget {
