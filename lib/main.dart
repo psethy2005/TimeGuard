@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_test1/stat_tab.dart';
+import 'package:flutter_test1/time_control.dart';
+import 'package:flutter_test1/settings.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,64 +13,62 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Time Guard',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const MainScreen(),
+      title: 'TimeGuard',
+      theme: ThemeData(primarySwatch: Colors.blueGrey),
+      home: NavBar(),
     );
   }
 }
 
-class MainScreen extends StatefulWidget {
-  const MainScreen({super.key});
+class NavBar extends StatefulWidget{
+  const NavBar ({super.key});
 
   @override
-  State<MainScreen> createState() => _MainScreenState();
+  State<NavBar> createState() => _NavBarState();
 }
 
-class _MainScreenState extends State<MainScreen> {
-  int _selectedIndex = 0;
+class _NavBarState extends State<NavBar>{
+  
+  final List<Widget> pages = [
+    const StatContent(),
+    const TimeControl(),
+    const SettingsContent(),
+  ];
 
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
+  int currentPage = 0;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Time Guard'),
-        backgroundColor: Colors.yellow,
-      ),
-      body: Center(
-        child: Text(
-          'Current Tab: ${_selectedIndex == 0 ? "Home" : _selectedIndex == 1 ? "Time Control" : "Settings"}',
-          style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-        ),
-      ),
+      body: pages[currentPage],
       bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
+        currentIndex: currentPage,
+        onTap: (value) {
+          setState(() {
+            currentPage = value;
+          });
+        },
+        items: const [
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.timer),
-            label: 'Time Control',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.settings),
-            label: 'Settings',
-          ),
-        ],
-        currentIndex: _selectedIndex,
-        selectedItemColor: Colors.deepPurple,
-        onTap: _onItemTapped,
-      ),
-    );
+            icon: Icon(
+              Icons.align_vertical_bottom,
+              ),
+            label: 'Stats'
+            ),
+            BottomNavigationBarItem(
+            icon: Icon(
+              Icons.add_task_rounded,
+              ),
+            label: 'Controls'
+            ),
+              BottomNavigationBarItem(
+            icon: Icon(
+              Icons.settings,
+              ),
+            label: 'Settings'
+            ),
+          ]
+        )
+      );
   }
 }
