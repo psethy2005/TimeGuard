@@ -56,7 +56,7 @@ class SettingsContent extends StatelessWidget {
       leading: Icon(icon, color: Colors.blue),
       title: Text(option),
       onTap: () => _navigateToOption(context, option),
-    );;
+    );
   }
 }
 
