@@ -12,7 +12,7 @@ class _TimeControlState extends State<TimeControl> {
 
   ListDisplay listDisplay = ListDisplay();
 
-  void _AddNewApp() {
+  void _addNewApp() {
     //Show dialog to enter app details
     showDialog(
       context: context, 
@@ -51,6 +51,7 @@ class _TimeControlState extends State<TimeControl> {
                         icon: Icons.star, // Default icon
                         title: titleController.text,
                         subtitle: subtitleController.text,
+                        progress: 0
                       ),
                     );
                   });
@@ -71,34 +72,46 @@ class _TimeControlState extends State<TimeControl> {
         appBar: AppBar(
           title: const Text('Controls'),
           centerTitle: true,
-          backgroundColor: Colors.blue,
+          backgroundColor: Colors.deepPurple[200],
         ),
         floatingActionButton: FloatingActionButton(
-          onPressed: _AddNewApp, //Add new app when pressed
-          child: const Icon(Icons.add),
+          onPressed: _addNewApp, //Add new app when pressed
           backgroundColor: Colors.white,
+          child: const Icon(Icons.add),
         ),
         body: ListView.separated(
           itemCount: listDisplay.items.length,
           itemBuilder: (BuildContext context, int index){
-            return ListTile(
-                  title: Text(listDisplay.items[index].title),
-                  tileColor: Colors.blueGrey,
-                  onTap: () {
-                    //Navigate to an different page for each app
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => DetailPage(item: listDisplay.items[index]),
-                      )
-                    );
-                  },
-                );
+            return Container(
+              margin: EdgeInsets.symmetric(vertical: 5, horizontal: 15),
+              decoration: BoxDecoration(
+                color: Colors.purple[50],
+                borderRadius: BorderRadius.circular(10), // Rounded corners
+              ),
+              child: ListTile(
+                title: Text(listDisplay.items[index].title),
+                subtitle: LinearProgressIndicator(
+                  value: listDisplay.items[index].progress,
+                  valueColor: AlwaysStoppedAnimation(Colors.blue),
+                  backgroundColor: Colors.grey,
+                ),
+                tileColor: Colors.white,
+                onTap: () {
+                  //Navigate to an different page for each app
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => DetailPage(item: listDisplay.items[index]),
+                    )
+                  );
+                },
+              )
+            );
           },
-          separatorBuilder: (BuildContext context, int index) => const Divider(
-            color: Colors.white
-          ),
-        )
+          separatorBuilder: (BuildContext context, int index) => const Padding(
+            padding: EdgeInsets.symmetric(vertical: 5)
+          )
+        ),
       )
     );
   }
@@ -136,15 +149,16 @@ class ListItem {
   final IconData icon;
   final String title;
   final String subtitle;
+  final double progress;
 
-  ListItem({required this.icon, required this.title, required this.subtitle});
+  ListItem({required this.icon, required this.title, required this.subtitle, this.progress = 0.0});
 }
 
 class ListDisplay extends ChangeNotifier {
   final List<ListItem> _items = [
-    ListItem(icon: Icons.phone, title: "Call", subtitle: "Make a phone call"),
-    ListItem(icon: Icons.email, title: "Email", subtitle: "Send an email"),
-    ListItem(icon: Icons.map, title: "Maps", subtitle: "Open maps"),
+    ListItem(icon: Icons.phone, title: "Call", subtitle: '0.5', progress: 0.7),
+    ListItem(icon: Icons.email, title: "Email", subtitle: "Send an email", progress: 0.5),
+    ListItem(icon: Icons.map, title: "Maps", subtitle: "Open maps", progress: 0.3),
   ];
 
   List<ListItem> get items => _items;
