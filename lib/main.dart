@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_test1/stat_tab.dart';
-import 'package:flutter_test1/time_control.dart';
-import 'package:flutter_test1/settings.dart';
+import 'package:flutter_test1/Pages/stat_tab.dart';
+import 'package:flutter_test1/Pages/time_control.dart';
+import 'package:flutter_test1/Pages/settings.dart';
 
 void main() {
   runApp(const MyApp());
